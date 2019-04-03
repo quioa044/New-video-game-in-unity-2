@@ -20,12 +20,14 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKey("d"))
         {
-            rb.AddForce(sidewaysForce* Time.deltaTime, 0, 0);
+            // Add a Force to the right
+            rb.AddForce(sidewaysForce* Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
         if (Input.GetKey("a"))
         {
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+            // Add a force to the left
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
     }
 }
